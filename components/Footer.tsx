@@ -34,7 +34,7 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <div className="flex gap-6 justify-between bg-black mt-auto text-white px-32 pt-12 pb-28">
+    <div className="flex gap-6 justify-between bg-black mt-30 text-white px-32 pt-12 pb-28">
       <div className="">
         <p className="text-xl font-semibold mb-3">Exclusive</p>
         <Link href="#">Subscribe</Link>
