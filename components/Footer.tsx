@@ -43,15 +43,15 @@ export default function Footer() {
           <input
             type="text"
             placeholder="Enter your email"
-            className=" pl-3 text-white text-xs bg-transparent focus:outline-none w-full"
+            className=" pl-3 text-white text-xs bg-transparent focus:outline-none"
           />
-          <Image
+          {/* <Image
             src="/icons/mail.png"
             alt="send email"
             height={20}
             width={20}
             className="-ml-8"
-          />
+          /> */}
         </div>
       </div>
       <div className="text-wrap max-w-60">
