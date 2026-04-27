@@ -26,7 +26,7 @@ export default function Navbar() {
           Exclusive
         </Link>
         <nav className="flex space-x-10 font-medium">
-          <Link href="#" className="hover:underline underline-offset-4">
+          <Link href="/" className="hover:underline underline-offset-4">
             Home
           </Link>
           <Link href="#" className="hover:underline underline-offset-4">
@@ -35,7 +35,7 @@ export default function Navbar() {
           <Link href="#" className="hover:underline underline-offset-4">
             About
           </Link>
-          <Link href="#" className="hover:underline underline-offset-4">
+          <Link href="/signup" className="hover:underline underline-offset-4">
             Sign up
           </Link>
         </nav>
