@@ -1,8 +1,8 @@
 import Image from "next/image";
-import SignupForm from "@/components/SignupForm";
+import LoginForm from "@/components/LoginForm";
 import Link from "next/link";
 
-export default function Signup() {
+export default function Login() {
   return (
     <div className=" max-w-7xl mt-10">
       <div className="min-h-screen grid grid-cols-2 w-full gap-10">
@@ -19,24 +19,18 @@ export default function Signup() {
         <div className="flex flex-col max-w-lg w-3/4 mt-14">
           <div>
             <div className="mb-5">
-              <h1 className="text-3xl font-semibold mb-2">Create an Account</h1>
+              <h1 className="text-3xl font-semibold mb-3">Login to Exclusive</h1>
               <p className="text-sm">Enter your details below</p>
             </div>
           </div>
-          <SignupForm />
-          <button className="flex gap-4 border p-2 py-3 items-center justify-center rounded text-sm mt-4">
-            <Image
-              src="/icons/google.png"
-              alt="google icon"
-              height={20}
-              width={20}
-            />
-            <p>Sign up with Google</p>
-          </button>
+          <div className="mt-4">
+            <LoginForm />
+          </div>
+         
           <div className="text-center text-xs  mt-4 flex justify-center">
-            <p className="">Already have an account</p>
-            <Link href="/login" className="ml-3 underline">
-              Log in
+            <p className="">Don't have an Account?</p>
+            <Link href="/signup" className="ml-2 underline">
+              Sign up
             </Link>
           </div>
         </div>
