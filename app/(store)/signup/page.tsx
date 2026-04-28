@@ -17,8 +17,8 @@ export default function Signup() {
         </div>
         <div className="flex flex-col max-w-lg w-full md:w-3/4">
           <div>
-            <div className="mb-5 text-center">
-              <h1 className="text-3xl font-semibold mb-2">Create an Account</h1>
+            <div className="mb-5 text-center md:text-left">
+              <h1 className="text-3xl font-semibold mb-2 w-full">Create an Account</h1>
               <p className="text-sm ">Enter your details below</p>
             </div>
           </div>
