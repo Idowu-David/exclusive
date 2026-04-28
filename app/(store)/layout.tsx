@@ -14,7 +14,7 @@ export default function StoreLayout({
 
       {/* The `children` represents your page.tsx content (Homepage, Product Page, etc.) */}
       <main className="flex-row">{children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
