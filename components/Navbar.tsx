@@ -1,11 +1,28 @@
 "use client";
 
 import Link from "next/link";
-import { Search, Heart, ShoppingCart, Menu, Home, Phone, Info, UserPlus } from "lucide-react";
-import { useState } from "react";
+import {
+  Search,
+  Heart,
+  ShoppingCart,
+  Menu,
+  Home,
+  Phone,
+  Info,
+  UserPlus,
+} from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isMenuOpen) setIsMenuOpen(false);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMenuOpen]);
 
   return (
     <header className="relative border-b border-gray-300">
