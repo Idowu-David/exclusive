@@ -4,21 +4,20 @@ import Link from "next/link";
 
 export default function Login() {
   return (
-    <div className="md:min-h- flex md:items-center justify-center p-4 mt-10 mx-3">
-      <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-10">
-        <div className="hidden md:relative">
+    <div className="flex md:items-center justify-center p-4 mt-10 mx-3 max-w-5xl lg:mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-6 justify-items-center">
+        <div className="hidden md:relative md:block h-full min-h-125">
           <Image
             src="/images/login-image.png"
             alt="Login Banner-Marketplace"
-            fill
-            // height={300}
-            // width={300}
-            className="object-cover"
+            height={900}
+            width={700}
+            className="object-cover w-full h-full"
           />
         </div>
-        <div className="flex flex-col max-w-lg w-full md:w-3/4">
+        <div className="flex flex-col max-w-lg w-full md:w-3/4 md:mt-8">
           <div>
-            <div className="mb-5 text-center">
+            <div className="mb-5 text-center md:text-left">
               <h1 className="text-3xl font-semibold mb-3">
                 Login to Exclusive
               </h1>

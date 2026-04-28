@@ -25,8 +25,8 @@ export default function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <header className="relative border-b border-gray-300">
-      <div className="max-w-7xl bg-black text-white px-6 h-12 flex justify-center items-center text-sm relative text-center">
+    <header className="relative border-b border-gray-300 w-full">
+      <div className="w-full bg-black text-white px-6 h-12 flex justify-center items-center text-sm relative text-center mx-auto">
         <div className="">
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!{" "}
           <Link href="/" className="underline ml-3">
@@ -116,7 +116,7 @@ export default function Navbar() {
       </nav>
 
       <div className="flex md:items-center md:justify-center md:w-full">
-        <div className="max-w-7xl mx-auto pl-4 flex items-end h-16 pb-2 md:w-1/5">
+        <div className="mx-auto pl-4 flex items-end h-16 pb-2 md:w-1/5">
           <div className="flex items-center gap-3">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <Menu className="h-7 w-7 md:hidden" />
@@ -126,8 +126,9 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
+
         {/* Desktop Nav */}
-        <nav className="hidden md:flex md:space-x-4 lg:space-x-6 font-medium text-sm md:text-base items-center justify-center md:w-2/5">
+        <nav className="hidden md:flex md:space-x-4 lg:space-x-10 font-medium text-sm md:text-base items-center justify-center md:w-2/5">
           <Link href="/" className="hover:underline underline-offset-4">
             Home
           </Link>

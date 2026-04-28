@@ -4,16 +4,15 @@ import Link from "next/link";
 
 export default function Signup() {
   return (
-    <div className="md:min-h- flex md:items-center jusify-center p-4 mt-10 mx-3">
-      <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-10">
-        <div className="hidden md:relative">
+    <div className="flex md:items-center jusify-center p-4 mt-10 mx-3 max-w-5xl lg:mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-10 justify-items-center">
+        <div className="hidden relative md:block h-full min-h-125 overflow-hidden">
           <Image
             src="/images/login-image.png"
             alt="Login Banner-Marketplace"
-            fill
-            // height={300}
-            // width={300}
-            className="object-cover"
+            height={900}
+            width={700}
+            className="object-cover w-full h-full"
           />
         </div>
         <div className="flex flex-col max-w-lg w-full md:w-3/4">
