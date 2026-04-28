@@ -13,7 +13,7 @@ export default function StoreLayout({
       <Navbar />
 
       {/* The `children` represents your page.tsx content (Homepage, Product Page, etc.) */}
-      <main className="flex-row">{children}</main>
+      <main className="flex-1">{children}</main>
       <Footer />
     </div>
   );

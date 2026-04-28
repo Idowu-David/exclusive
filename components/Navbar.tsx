@@ -26,7 +26,6 @@ export default function Navbar() {
 
   return (
     <header className="relative border-b border-gray-300">
-      {/* <header className="h-30 w-full"> */}
       <div className="max-w-7xl bg-black text-white px-6 h-12 flex justify-center items-center text-sm relative text-center">
         <div className="">
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!{" "}
@@ -116,8 +115,8 @@ export default function Navbar() {
         </div>
       </nav>
 
-      <div className="flex">
-        <div className="max-w-7xl mx-auto pl-4 flex items-end h-16 pb-2">
+      <div className="flex md:items-center md:justify-center md:w-full">
+        <div className="max-w-7xl mx-auto pl-4 flex items-end h-16 pb-2 md:w-1/5">
           <div className="flex items-center gap-3">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <Menu className="h-7 w-7 md:hidden" />
@@ -128,7 +127,7 @@ export default function Navbar() {
           </div>
         </div>
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-10 font-medium">
+        <nav className="hidden md:flex md:space-x-4 lg:space-x-6 font-medium text-sm md:text-base items-center justify-center md:w-2/5">
           <Link href="/" className="hover:underline underline-offset-4">
             Home
           </Link>
@@ -142,14 +141,14 @@ export default function Navbar() {
             Sign up
           </Link>
         </nav>
-        <div className="flex justify-end w-full">
-          <div className="flex items-center justify-center bg-gray-200 rounded">
+        <div className="flex justify-end w-full md:gap-3 md:w-2/5 md:justify-center ">
+          <div className="hidden items-center justify-center bg-gray-200 rounded md:flex py-2 pl-3">
             <input
               type="text"
               placeholder="What are you looking for?"
-              className="hidden outline-none"
+              className="outline-none text-xs md:mr-2 w-full"
             />
-            {/* <Search className="w-6 h-6" /> */}
+            <Search className="w-6 h-6 md:mx-2 md" />
           </div>
           <div className="flex mr-4 gap-4 items-center">
             <Heart className="w-7 h-7" />

@@ -36,11 +36,11 @@ export default function Footer() {
   return (
     <div className=" bg-black mt-30 text-white px-4 pt-8 pb-28">
       <p className="text-xl font-semibold mb-6">Exclusive</p>
-      <div className="grid grid-cols-2 gap-12">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 justify-self-center">
         <div className="">
           <Link href="#">Subscribe</Link>
           <p className="text-xs mt-5">Get 10% off your first order</p>
-          <div className="flex border-white border-2 p-2 mt-2">
+          <div className="flex border-white border-2 p-2 mt-2 rounded">
             <input
               type="text"
               placeholder="Enter your email"
@@ -75,7 +75,7 @@ export default function Footer() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col gap-2 font-semibold col-span-2 items-center justify-center">
+        <div className="col-span-2 md:col-span-1 justify-self-center md:justify-self-start">
           <p className="mb-3">Download App</p>
           <p className="text-xs text-gray-300 mb-3">
             Save $3 with App New User Only
