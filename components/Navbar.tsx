@@ -105,7 +105,7 @@ export default function Navbar() {
           <div className="flex gap-2 items-center">
             <UserPlus className="w-5 h-5" />
             <Link
-              href="/"
+              href="/signup"
               className="hover:underline underline-offset-4"
               onClick={() => setIsMenuOpen(false)}
             >

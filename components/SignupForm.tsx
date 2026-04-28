@@ -12,7 +12,7 @@ export default function SignupForm() {
   const router = useRouter()
 
   const inputStyle =
-    "border-b border-gray-400  pb-2 pt-1 w-full focus:outline-none shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1) focus:border-b-2 text-sm";
+    "border-b border-gray-400 text-base pb-2 pt-1 w-full focus:outline-none shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1) focus:border-b-2 text-sm";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
