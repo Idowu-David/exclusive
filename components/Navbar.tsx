@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Search, Heart, ShoppingCart, Menu } from "lucide-react";
+import { Search, Heart, ShoppingCart, Menu, Home, Phone, Info, UserPlus } from "lucide-react";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -24,30 +24,40 @@ export default function Navbar() {
         </div>
       </div>
 
+      <div
+        className={`md:hidden fixed inset-0 bg-black/10 z-40 transition-all duration-300 ease-in-out ${
+          isMenuOpen
+            ? "opacity-100 visible pointer-events-auto"
+            : "opacity-0 invisible pointer-events-none"
+        }`}
+        onClick={() => setIsMenuOpen(false)}
+      ></div>
+
       {/* Mobile Nav */}
-      <div className="flex">
-        <nav
-          className={`flex flex-col fixed pl-10  rounded-br-2xl w-3/5  mt-16 transition-all z-50 duration-300 ${isMenuOpen ? "visible opacity-100" : "invisible opacity-0"}`}
+      <nav
+        className={`flex flex-col fixed pl-10  rounded-br-2xl w-3/5  mt-16 transition-all z-50 duration-200 bg-white/80 backdrop-blur-md border-gray-200 border-b ${isMenuOpen ? "visible opacity-100" : "invisible opacity-0"}`}
+      >
+        <button
+          className="absolute right-6 top-4 "
+          onClick={() => setIsMenuOpen(false)}
         >
-          <button
-            className="absolute right-6 top-4 "
-            onClick={() => setIsMenuOpen(false)}
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
           >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-          <div className="flex flex-col gap-10 py-10">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+        <div className="flex flex-col gap-10 py-10">
+          <div className="flex gap-2 items-center">
+            <Home className="w-5 h-5" />
             <Link
               href="/"
               className="hover:underline underline-offset-4"
@@ -55,29 +65,41 @@ export default function Navbar() {
             >
               Home
             </Link>
+          </div>
+          <div className="flex gap-2 items-center">
+            <Phone className="w-5 h-5" />
             <Link
-              href="#"
+              href="/"
               className="hover:underline underline-offset-4"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
             </Link>
+          </div>
+          <div className="flex gap-2 items-center">
+            <Info className="w-5 h-5" />
             <Link
-              href="#"
+              href="/"
               className="hover:underline underline-offset-4"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
+          </div>
+          <div className="flex gap-2 items-center">
+            <UserPlus className="w-5 h-5" />
             <Link
-              href="/signup"
+              href="/"
               className="hover:underline underline-offset-4"
               onClick={() => setIsMenuOpen(false)}
             >
-              Sign up
+              Sign in
             </Link>
           </div>
-        </nav>
+        </div>
+      </nav>
+
+      <div className="flex">
         <div className="max-w-7xl mx-auto pl-4 flex items-end h-16 pb-2">
           <div className="flex items-center gap-3">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -88,7 +110,6 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
-
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-10 font-medium">
           <Link href="/" className="hover:underline underline-offset-4">
@@ -104,7 +125,6 @@ export default function Navbar() {
             Sign up
           </Link>
         </nav>
-
         <div className="flex justify-end w-full">
           <div className="flex items-center justify-center bg-gray-200 rounded">
             <input
@@ -114,7 +134,6 @@ export default function Navbar() {
             />
             {/* <Search className="w-6 h-6" /> */}
           </div>
-
           <div className="flex mr-4 gap-4 items-center">
             <Heart className="w-7 h-7" />
             <ShoppingCart className="w-7 h-7" />
