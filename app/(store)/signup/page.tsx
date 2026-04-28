@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function Signup() {
   return (
-    <div className=" max-w-7xl mt-10">
-      <div className="min-h-screen grid grid-cols-2 w-full gap-10">
+    <div className="min-h-screen flex items-center jusify-center p-4">
+      <div className="grid grid-cols-2 w-full gap-10">
         <div className="relative">
           <Image
             src="/images/login-image.png"
