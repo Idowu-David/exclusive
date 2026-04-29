@@ -1,13 +1,92 @@
-import Features from "@/components/Features";
-import Image from "next/image";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link"
+"use client";
+
 import HeroBanner from "@/components/HeroBanner";
+import CategoryCard from "@/components/CategoryCard";
+import HorizontalRule from "@/components/HorizontalRule";
+import {
+  Smartphone,
+  Monitor,
+  Watch,
+  Camera,
+  Headphones,
+  Gamepad2,
+  ArrowLeft,
+  ArrowRight,
+} from "lucide-react";
+import { useRef, useState } from "react";
 
 export default function Home() {
+  const CATEGORIES = [
+    { id: "phones", title: "Phones", icon: Smartphone },
+    { id: "computers", title: "Computers", icon: Monitor },
+    { id: "smartwatch", title: "SmartWatch", icon: Watch },
+    { id: "camera", title: "Camera", icon: Camera },
+    { id: "headphones", title: "HeadPhones", icon: Headphones },
+    { id: "gaming", title: "Gaming", icon: Gamepad2 },
+  ];
+
+  const [activeCategory, setActiveCategory] = useState("camera");
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    scrollRef.current?.scrollBy({ left: -300, behavior: "smooth" });
+  };
+
+  const scrollRight = () => {
+    scrollRef.current?.scrollBy({ left: 300, behavior: "smooth" });
+  };
+
   return (
-    <div className="flex items-center w-full justify-center">
-      <HeroBanner/>
+    <div className="w-full md:px-15">
+      <div className="md:flex md:justify-end sm:px-10">
+        <HeroBanner />
+      </div>
+
+      <HorizontalRule />
+
+      {/* BROWSE BY CATEGORY */}
+
+      <div className="px-3 space-y-2 md:space-y-4 mt-8">
+        <div className="flex gap-3 items-center text-[#D84444] font-medium">
+          <div className="h-8 w-4 rounded bg-[#D84444]" />
+          <div>Categories</div>
+        </div>
+        <div className="flex justify-between mb-5 mr-2">
+          <h2 className="font-medium text-2xl tracking-wide">
+            Browse by Category
+          </h2>
+          <div className="flex gap-2">
+            <button
+              onClick={scrollLeft}
+              className="p-2 rounded-full bg-gray-100"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={scrollRight}
+              className="p-2 rounded-full bg-gray-100"
+            >
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+        <div
+          ref={scrollRef}
+          className="flex gap-4 md:gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x scroll-snap-type-x mandatory"
+        >
+          {CATEGORIES.map((category) => (
+            <div key={category.id} className="scroll-snap-align-start shrink">
+              <CategoryCard
+                title={category.title}
+                Icon={category.icon}
+                isActive={activeCategory == category.id}
+                onClick={() => setActiveCategory(category.id)}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
       {/* <Features /> */}
     </div>
   );
