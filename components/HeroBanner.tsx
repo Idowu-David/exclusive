@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function HeroBanner() {
   return (
-    <div className="flex w-full text-white max-w-2xl">
+    <div className="flex w-full text-white max-w-3xl mt-10">
       <div className="w-full flex justify-center">
         {/* <div className="hidden">List</div> */}
         <div className="bg-black flex flex-col-reverse md:flex-row p-2 justify-center items-center w-full py-3 md:h-70">

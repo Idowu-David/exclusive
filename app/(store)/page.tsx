@@ -2,6 +2,7 @@
 
 import HeroBanner from "@/components/HeroBanner";
 import CategoryCard from "@/components/CategoryCard";
+import FlashSaleCard from "@/components/FlashSaleCard";
 import HorizontalRule from "@/components/HorizontalRule";
 import {
   Smartphone,
@@ -14,6 +15,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { useRef, useState } from "react";
+import CategoryList from "@/components/CategoryList";
 
 export default function Home() {
   const CATEGORIES = [
@@ -38,22 +40,56 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full md:px-15">
-      <div className="md:flex md:justify-end sm:px-10">
+    <div className="w-full md:px-20">
+      <div className="md:flex md:justify-between sm:px-10 md:gap-10">
+        <div className="hidden md:block border-r border-gray-300 pr-22 md:pr-10 pt-10">
+          <CategoryList />
+        </div>
         <HeroBanner />
+      </div>
+
+      <HorizontalRule />
+
+      {/* FLASH SALES */}
+
+      <div className="px-3 md:px-0 space-y-2 md:space-y-4 mt-8">
+        <div className="flex gap-3 items-center text-[#D84444] font-medium">
+          <div className="h-8 w-4 rounded bg-[#D84444]" />
+          <div>Today's</div>
+        </div>
+        <div className="flex justify-between mb-5 mr-2">
+          <h2 className="font-semibold text-xl tracking-wide">
+            Flash Sales
+          </h2>
+          <div className="flex gap-2">
+            <button
+              onClick={scrollLeft}
+              className="p-2 rounded-full bg-gray-100"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={scrollRight}
+              className="p-2 rounded-full bg-gray-100"
+            >
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+        <FlashSaleCard/>
       </div>
 
       <HorizontalRule />
 
       {/* BROWSE BY CATEGORY */}
 
-      <div className="px-3 space-y-2 md:space-y-4 mt-8">
+      <div className="px-3 md:px-0 space-y-2 md:space-y-4 mt-8">
         <div className="flex gap-3 items-center text-[#D84444] font-medium">
           <div className="h-8 w-4 rounded bg-[#D84444]" />
           <div>Categories</div>
         </div>
         <div className="flex justify-between mb-5 mr-2">
-          <h2 className="font-medium text-2xl tracking-wide">
+          <h2 className="font-semibold text-xl tracking-wide">
             Browse by Category
           </h2>
           <div className="flex gap-2">

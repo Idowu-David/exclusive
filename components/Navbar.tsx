@@ -25,7 +25,7 @@ export default function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <header className="relative border-b border-gray-300 w-full mb-3">
+    <header className="relative border-b border-gray-300 w-full mb-3 md:mb-0">
       <div className="w-full bg-black text-white px-6 h-12 flex justify-center items-center text-sm relative text-center md:mx-auto">
         <div className="">
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!{" "}
