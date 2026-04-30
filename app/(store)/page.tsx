@@ -4,6 +4,7 @@ import HeroBanner from "@/components/HeroBanner";
 import CategoryCard from "@/components/CategoryCard";
 import FlashSaleCard from "@/components/FlashSaleCard";
 import HorizontalRule from "@/components/HorizontalRule";
+import StarRating from "@/components/StarRating";
 import {
   Smartphone,
   Monitor,
@@ -16,6 +17,7 @@ import {
 } from "lucide-react";
 import { useRef, useState } from "react";
 import CategoryList from "@/components/CategoryList";
+import { products } from "@/db/products";
 
 export default function Home() {
   const CATEGORIES = [
@@ -58,10 +60,8 @@ export default function Home() {
           <div>Today's</div>
         </div>
         <div className="flex justify-between mb-5 mr-2">
-          <h2 className="font-semibold text-xl tracking-wide">
-            Flash Sales
-          </h2>
-          <div className="flex gap-2">
+          <h2 className="font-semibold text-xl tracking-wide">Flash Sales</h2>
+          {/* <div className="flex gap-2">
             <button
               onClick={scrollLeft}
               className="p-2 rounded-full bg-gray-100"
@@ -74,9 +74,23 @@ export default function Home() {
             >
               <ArrowRight className="w-5 h-5" />
             </button>
-          </div>
+          </div> */}
         </div>
-        <FlashSaleCard/>
+
+        <div className="flex overflow-x-auto scrollbar-hide gap-4 snap-x scroll-snap-type-x snap-mandatory">
+          {products.slice(0, 20).map((product) => (
+            <div key={product.id} className="scroll-snap-align-start shrink">
+              <FlashSaleCard
+                title={product.title}
+                price={product.price}
+                discountPercentage={product.discountPercentage}
+                rating={product.rating}
+                stock={product.stock}
+                imageUrl={product.images[0]}
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       <HorizontalRule />
